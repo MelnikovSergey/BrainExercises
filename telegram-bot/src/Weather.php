@@ -10,7 +10,7 @@ class Weather
 
 		$api_key = '<ТОКЕН>';
 		$api_url = 'http://api.openweathermap.org/data/2.5/weather?q=' . $city . '&appid=' . $api_key;
-		$weather_data = json_decode(file_get_contents($api_url), true);
+		$weather_data = json_decode(file_get_contents($api_url));
 
 		if($weather_data->main->temp) {
 			$temperature = $weather_data->main->temp;
