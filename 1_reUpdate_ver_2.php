@@ -65,7 +65,7 @@ function squareTrapeze(&$a) {
 
 	foreach ($a as $key => $value) {
 		$s = ($value['a'] + $value['b'])/2 * $value['c'];
-        $a[$key]['s'] = $s;
+        	$a[$key]['s'] = $s;
 	}
 
 	return $a;
