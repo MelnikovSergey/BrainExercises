@@ -1,1 +1,2 @@
-# BrainExercises
+# BrainExercises  
+Решаю учебные задачки для поддержания тонуса ;)
