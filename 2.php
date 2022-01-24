@@ -41,9 +41,6 @@ function convertString(string $a, string $b): string
 $a = '«Было, было, было, но прошло, о-о-о, о-о-о...» &copy; Cофия Ротару';
 $b = 'было';
 
-// $a = 'First, first, first, but second!';
-// $b = 'first';
-
 print_r(convertString($a, $b));
 echo '<hr>';
 
