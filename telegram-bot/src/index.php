@@ -4,6 +4,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 ini_set('error_reporting', E_ALL);
 
+require __DIR__ . "/setup/config.php";
+
 require __DIR__ . "/Weather.php";
 require __DIR__ . "/CurrencyExchangeRate.php";
 require __DIR__ . "/SmartKDMBot.php";
