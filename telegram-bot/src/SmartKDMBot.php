@@ -25,10 +25,10 @@ class SmartKDMBot
       
 		# Обрабатываем кнопку Погода->Введите наименование города
 		if (isset($this->telegramRequest->message->text) and file_exists(__DIR__ . '/logs/'. $this->telegramRequest->message->chat->id . '.txt')) {
-			$this->callfunc = 'true';
+		    $this->callfunc = 'true';
 		  	
-			$to = $this->telegramRequest->message->chat->id;
-			$this->telegramSend($to, Weather::getTheWeatherInTheCity($this->telegramRequest->message->text)); 
+		    $to = $this->telegramRequest->message->chat->id;
+		    $this->telegramSend($to, Weather::getTheWeatherInTheCity($this->telegramRequest->message->text)); 
 		}
           
 		# Обрабатываем кнопку "Курс валюты"
@@ -69,7 +69,17 @@ class SmartKDMBot
 				$this->telegramRequest->message->chat->id, 	
 				"Добрый день! Вас приветствует бот!.\n Good afternoon! The bot welcomes you!"
 			);
-		}  elseif (isset($this->telegramRequest->message->text)) {
+		} 
+ 
+		elseif ($this->telegramRequest->message->text === '/help') {
+			// $this->callfunc = 'true';
+              
+			$this->telegramSend(
+				$this->telegramRequest->message->chat->id, 	
+				"Одну секунду! Сейчас я вам выведу список опций!.\n One second, please! Now I will show the menu on the screen!"
+			);
+
+		} elseif (isset($this->telegramRequest->message->text)) {
 			$this->telegramSend(
 				$this->telegramRequest->message->chat->id, 	
 				"Извините, команда не распознана.\n Sorry, the command is not recognized"
@@ -156,9 +166,9 @@ class SmartKDMBot
 			$this->selectingAnOption();
 		}
         
-		if(file_exists(__DIR__ . '/logs/'. $this->telegramRequest->message->chat->id . '.txt')) {
-			unlink(__DIR__ . '/logs/' . $this->telegramRequest->message->chat->id . '.txt');
-		}
+        if(file_exists(__DIR__ . '/logs/'. $this->telegramRequest->message->chat->id . '.txt')) {
+          unlink(__DIR__ . '/logs/' . $this->telegramRequest->message->chat->id . '.txt');
+        }
       
 		if($msg == 'Введите наименование города') {
 			$msg == '';
