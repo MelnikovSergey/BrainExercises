@@ -85,7 +85,7 @@ class SmartKDMBot
 				"Извините, команда не распознана.\n Sorry, the command is not recognized"
 			);
 		}
-  }
+  	}
  
    
 	# Выбор опций
