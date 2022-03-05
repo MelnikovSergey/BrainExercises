@@ -72,7 +72,7 @@ class SmartKDMBot
 		} 
  
 		elseif ($this->telegramRequest->message->text === '/help') {
-			// $this->callfunc = 'true';
+			$this->callfunc = 'true';
               
 			$this->telegramSend(
 				$this->telegramRequest->message->chat->id, 	
