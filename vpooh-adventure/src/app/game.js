@@ -9,6 +9,12 @@ let player = {
 	el: false
 };
 
+// Init resources
+function initResources() {
+	game.innerHTML += `<div class="player" style="left: ${player.x}px; top: ${player.y}px;"></div>`;
+	player.el = true;
+}
+
 // Move player
 function movePlayer() {
 	document.addEventListener('keydown', (event) => {
@@ -18,10 +24,7 @@ function movePlayer() {
 
 // Entry point
 function startGame() {
-	game.innerHTML += `<div class="player" style="left: ${player.x}px; top: ${player.y}px;"></div>`;
-	player.el = true;
-
-	// Init func
+	initResources();
 	movePlayer();
 }
 
