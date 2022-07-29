@@ -26,5 +26,29 @@ body {
 	right: 0;
 	bottom: 0;
 	margin-bottom: 8px;
-	padding: 8px 16px;
+}
+
+.btn {
+	padding: 8px 16px;	
+	background-color: #fff;
+	border: none;
+	border-radius: 20px;
+	outline: none;
+	font-size: 12px;
+	line-height: 1.5;
+	text-transform: uppercase;
+	z-index: 10;
+	cursor: pointer;
+	box-shadow: 0 6px 7px #350e4c;
+	transition: all 0.1s cubic-bezier(0.67, 0.13, 0.1, 0.81);
+}
+
+.btn:hover {
+	box-shadow: 0 4px 4px #350e4c;
+	transform: translateY(1px);
+}
+
+.btn:active {
+	box-shadow: 0 1px 2px #244B94;
+	transform: translateY(2px);
 }
