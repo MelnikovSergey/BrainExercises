@@ -51,12 +51,14 @@
 					// left
 					player.x += player.step; 
 			  		playerContainer.style.left = `${player.x}px`;
+					toggleDirection();
 			    		break;
 	
 			  	  case 4: 
 					// right
 					player.x -= player.step;
-			  		playerContainer.style.left = `${player.x}px`;		    
+			  		playerContainer.style.left = `${player.x}px`;
+					toggleDirection();	    
 					break;
 				}
 			}
@@ -104,6 +106,11 @@
 			}
 		
 		});
+	}
+
+	// Toggle direction
+	function toggleDirection() {
+		//...
 	}
 	
 	// Entry point
