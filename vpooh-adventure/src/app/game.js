@@ -110,7 +110,10 @@
 
 	// Toggle direction
 	function toggleDirection() {
-		//...
+		if(player.direction == 3) 
+			playerContainer.classList.remove('mirrorAnSpriteHorizontally');
+		if(player.direction == 4) 
+			playerContainer.classList.add('mirrorAnSpriteHorizontally');
 	}
 	
 	// Entry point
