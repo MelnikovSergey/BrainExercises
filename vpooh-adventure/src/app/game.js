@@ -13,6 +13,8 @@
 		x: 50,
 		y: 50,
 		step: 5,
+		width: 45,
+		height: 116,
 		move: false,
 		direction: null // 1 - up, 2 - down, 3 - left, 4 - right 
 	};
@@ -36,30 +38,33 @@
 				switch (player.direction)
 				{
 			  	  case 1: 
-					// up
-					player.y -= player.step;
-			  		playerContainer.style.top = `${player.y}px`;
-			    		break;
+					if(player.y > 0) {
+					    player.y -= player.step;
+			  		    playerContainer.style.top = `${player.y}px`;
+			    		}
+	    				break;
 	
 			  	  case 2: 
-					// down
-					player.y += player.step;  
-			    		playerContainer.style.top = `${player.y}px`;
-			   		break;
+					if(player.y < game.getBoundingClientRect().bottom - player.height) {
+					    player.y += player.step;  
+			    		    playerContainer.style.top = `${player.y}px`;
+					}
+					break;
 	
 			  	  case 3: 
-					// left
-					player.x += player.step; 
-			  		playerContainer.style.left = `${player.x}px`;
-					toggleDirection();
-			    		break;
+					if(player.x < game.getBoundingClientRect().right - player.width) {									    player.x += player.step; 
+			  		    playerContainer.style.left = `${player.x}px`;
+					    toggleDirection();
+			    		}
+					break;
 	
 			  	  case 4: 
-					// right
-					player.x -= player.step;
-			  		playerContainer.style.left = `${player.x}px`;
-					toggleDirection();	    
-					break;
+					if(player.x > 0) {
+					    player.x -= player.step;
+			  		    playerContainer.style.left = `${player.x}px`;
+					    toggleDirection();
+					}
+	    				break;
 				}
 			}
 	
