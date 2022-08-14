@@ -19,6 +19,8 @@
 		direction: null // 1 - up, 2 - down, 3 - left, 4 - right 
 	};
 	
+	let ground = 12; 
+	
 	let intervals = {
 		run: false
 	}
@@ -45,14 +47,14 @@
 	    				break;
 	
 			  	  case 2: 
-					if(player.y < game.getBoundingClientRect().bottom - player.height) {
+					if(player.y < game.getBoundingClientRect().bottom - player.height-ground) {
 					    player.y += player.step;  
 			    		    playerContainer.style.top = `${player.y}px`;
 					}
 					break;
 	
 			  	  case 3: 
-					if(player.x < game.getBoundingClientRect().right - player.width) {									    player.x += player.step; 
+					if(player.x < game.getBoundingClientRect().right - player.width) {											    player.x += player.step; 
 			  		    playerContainer.style.left = `${player.x}px`;
 					    toggleDirection();
 			    		}
