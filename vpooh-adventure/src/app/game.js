@@ -18,6 +18,15 @@
 		move: false,
 		direction: null // 1 - up, 2 - down, 3 - left, 4 - right 
 	};
+
+	let honeyBees = {
+		x: 150,
+		y: 120,
+		step: 5,
+		width: 150,
+		height: 35,
+		move: false
+	};
 	
 	let ground = 12; 
 	
@@ -28,6 +37,7 @@
 	// Init resources
 	function initResources() {
 		game.innerHTML += `<div class="player" style="left: ${player.x}px; top: ${player.y}px;"></div>`;
+		game.innerHTML += `<div class="honeyBees" style="left: ${honeyBees.x}px; top: ${honeyBees.y}px;"></div>`;
 		playerContainer = document.querySelector('.player');
 	}
 	
@@ -122,6 +132,9 @@
 		if(player.direction == 4) 
 			playerContainer.classList.add('mirrorAnSpriteHorizontally');
 	}
+
+
+
 	
 	// Entry point
 	function startGame() {
